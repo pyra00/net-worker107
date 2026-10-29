@@ -1,0 +1,20 @@
+role_id,title,client_project,required_skills,nice_to_have_skills,seniority,location,start_date,status
+SMP-001,Data Analyst,Summit Retail Group - Sales Reporting,SQL; Excel; Power BI; Data Cleaning,Python; Tableau,Junior,"Dallas, TX",2026-11-09,Open
+SMP-002,Business Analyst,Meridian Bank - Digital Onboarding,Requirements Gathering; Stakeholder Management; SQL; Jira,Agile; Process Mapping,Mid,"Tampa, FL",2026-11-16,Open
+SMP-003,Senior Data Analyst,Harbor Health Systems - Patient Experience Analytics,SQL; Python; Tableau; A/B Testing,dbt; Statistics,Senior,Remote,2026-12-01,Open
+SMP-004,Data Engineer,Atlas Logistics - Shipment Data Pipeline,Python; SQL; ETL; Git,Airflow; PySpark,Junior,"Atlanta, GA",2026-11-23,Open
+SMP-005,Data Engineer,Meridian Bank - Customer Data Platform,PySpark; SQL; Azure Data Factory; Delta Lake,Databricks; Terraform; CI/CD,Mid,"Tampa, FL",2026-12-07,Open
+SMP-006,Senior Data Engineer,Crestline Insurance - Claims Data Lake,PySpark; AWS; Airflow; Data Modeling; Snowflake,Kafka; Terraform,Senior,Remote,2027-01-11,Open
+SMP-007,Lead Data Engineer,Bluepeak Energy - On-Prem to Cloud Data Migration,Cloud Migration; Azure; Databricks; Data Architecture; Team Leadership,Terraform; Stakeholder Management,Lead,"Chicago, IL",2026-12-14,Open
+SMP-008,Software Engineer,Summit Retail Group - Store Inventory App,Java; SQL; Git; REST APIs,Spring Boot; Docker,Junior,"Dallas, TX",2026-11-30,Filled
+SMP-009,Software Engineer,Orion Telecom - Billing Services,Python; REST APIs; Docker; PostgreSQL,FastAPI; AWS; CI/CD,Mid,Remote,2026-12-01,Open
+SMP-010,Senior Full Stack Engineer,Harbor Health Systems - Patient Portal,React; TypeScript; Node.js; REST APIs; PostgreSQL,AWS; GraphQL,Senior,"New York, NY",2027-01-04,Open
+SMP-011,Go Backend Engineer,Meridian Bank - Loan Decisioning Service,Go; Microservices; Docker; Kubernetes,gRPC; PostgreSQL,Mid,"Tampa, FL",2026-12-14,Open
+SMP-012,Cloud / DevOps Engineer,Atlas Logistics - Cloud Infrastructure,AWS; Terraform; CI/CD; Docker; Linux,Kubernetes; Python,Mid,Remote,2026-11-16,Open
+SMP-013,QA Automation Engineer,Orion Telecom - Customer App Testing,Selenium; Python; Test Automation; CI/CD,Cypress; API Testing,Mid,"Atlanta, GA",2026-11-23,On Hold
+SMP-014,Machine Learning Engineer,Crestline Insurance - Fraud Detection,Python; Machine Learning; scikit-learn; MLOps; SQL,PyTorch; AWS SageMaker,Senior,Remote,2027-01-18,Open
+SMP-015,AI Engineer,Bluepeak Energy - Maintenance Knowledge Assistant,Python; Generative AI; REST APIs; Vector Databases,LangChain; Azure OpenAI,Mid,"Chicago, IL",2027-01-11,Open
+SMP-016,BI Developer,Summit Retail Group - Executive Dashboards,Power BI; DAX; SQL; Data Modeling,Azure Synapse; Power Query,Mid,"Dallas, TX",2026-11-09,Filled
+SMP-017,Cybersecurity Analyst,Meridian Bank - Security Operations,Security Monitoring; SIEM; Incident Response; Network Security,Splunk; Python,Mid,"Tampa, FL",2027-02-01,Open
+SMP-018,Technical Project Manager,Bluepeak Energy - On-Prem to Cloud Data Migration,Agile; Project Planning; Stakeholder Management; Jira; Risk Management,Cloud Migration; Budgeting,Senior,"Chicago, IL",2026-12-01,Filled
+SMP-019,Solutions Architect,Crestline Insurance - Claims Modernization,Cloud Architecture; AWS; Azure; Solution Design; Stakeholder Management,Data Platforms; Security,Lead,Remote,2027-01-25,Open
