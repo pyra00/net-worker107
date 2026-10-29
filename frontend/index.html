@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Internal project marketplace for discovering and publishing projects.">
+  <title>ProjectHub | Project Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="ProjectHub home">
+        <span class="brand-mark">P</span>
+        <span>ProjectHub</span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="navigation" aria-label="Main navigation">
+        <button class="nav-link active" data-view="browse" type="button">
+          <span class="nav-icon">⌕</span> Browse projects
+        </button>
+        <button class="nav-link" data-view="manage" type="button">
+          <span class="nav-icon">＋</span> Publish a project
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-icon">✦</span>
+          <strong>Find your next opportunity</strong>
+          <p>Explore projects where your skills can make an impact.</p>
+        </div>
+        <div class="user-mini">
+          <div class="avatar">P</div>
+          <div><strong>Your workspace</strong><small>Spreadsheet preview</small></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumbs">Workspace <span>/</span> <strong id="breadcrumb-current">Browse projects</strong></div>
+        <div class="topbar-right"><span class="status-dot"></span> <span id="connection-status">Connecting to spreadsheet...</span></div>
+      </header>
+
+      <section id="browse-view" class="view">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">INTERNAL OPPORTUNITIES</p>
+            <h1>Find your next project.</h1>
+            <p class="subheading">Discover opportunities, build new skills, and make an impact across teams.</p>
+          </div>
+          <button class="button button-primary" id="open-publish" type="button"><span>＋</span> Publish a project</button>
+        </div>
+
+        <section class="stats-grid" aria-label="Project statistics">
+          <article class="stat-card">
+            <div class="stat-top"><span>Open projects</span><span class="stat-icon purple">▦</span></div>
+            <strong id="stat-open">0</strong><small>Available to explore</small>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Skill areas</span><span class="stat-icon blue">◇</span></div>
+            <strong id="stat-skills">0</strong><small>Across open projects</small>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Remote-friendly</span><span class="stat-icon green">⌁</span></div>
+            <strong id="stat-remote">0</strong><small>Remote opportunities</small>
+          </article>
+        </section>
+
+        <section class="projects-section">
+          <div class="section-heading">
+            <div><h2>Explore projects</h2><p>Find a project that matches your interests and skills.</p></div>
+            <span class="results-count" id="results-count">0 projects</span>
+          </div>
+
+          <div class="search-panel">
+            <label class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <input id="search-input" type="search" placeholder="Search by project, skill, or keyword..." autocomplete="off">
+            </label>
+            <label class="filter-label" for="location-filter">Location</label>
+            <select id="location-filter">
+              <option value="all">All locations</option>
+              <option value="remote">Remote</option>
+              <option value="hybrid">Hybrid</option>
+              <option value="onsite">On-site</option>
+            </select>
+            <label class="filter-label" for="sort-filter">Sort</label>
+            <select id="sort-filter">
+              <option value="newest">Recently added</option>
+              <option value="title">Project title</option>
+            </select>
+          </div>
+
+          <div class="skill-filter-row">
+            <span>Popular skills</span>
+            <div id="skill-chips" class="skill-chips"></div>
+          </div>
+
+          <div id="project-grid" class="project-grid" aria-live="polite"></div>
+          <div id="empty-state" class="empty-state hidden">
+            <div class="empty-icon">⌕</div>
+            <h3>No projects found</h3>
+            <p>Try another keyword or clear your filters.</p>
+            <button class="button button-secondary" id="clear-filters" type="button">Clear filters</button>
+          </div>
+        </section>
+      </section>
+
+      <section id="manage-view" class="view hidden">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">PROJECT MANAGER WORKSPACE</p>
+            <h1>Publish an opportunity.</h1>
+            <p class="subheading">Share a project with employees looking for their next challenge.</p>
+          </div>
+        </div>
+
+        <div class="form-layout">
+          <form id="project-form" class="publish-form">
+            <div class="form-section-title"><span class="step-number">1</span><div><h2>Project overview</h2><p>Start with the essentials.</p></div></div>
+            <label for="project-title">Project title <span class="required">*</span></label>
+            <input id="project-title" name="title" required maxlength="100" placeholder="e.g. Customer Insights Dashboard">
+            <label for="project-description">Description <span class="required">*</span></label>
+            <textarea id="project-description" name="description" required rows="4" maxlength="1200" placeholder="What is the project about? What impact will the team make?"></textarea>
+
+            <div class="two-column">
+              <div><label for="project-team">Team / department</label><input id="project-team" name="team" placeholder="e.g. Data & Analytics"></div>
+              <div><label for="project-manager">Project manager</label><input id="project-manager" name="manager" placeholder="e.g. Jordan Lee"></div>
+            </div>
+
+            <div class="form-section-title second-section"><span class="step-number">2</span><div><h2>Skills and work setup</h2><p>Help employees understand what is needed.</p></div></div>
+            <label for="project-skills">Required skills <span class="required">*</span></label>
+            <input id="project-skills" name="skills" required placeholder="Python, SQL, Tableau (separate with commas)">
+            <div class="two-column">
+              <div><label for="project-location">Location type</label><select id="project-location" name="location"><option>Remote</option><option>Hybrid</option><option>On-site</option></select></div>
+              <div><label for="project-duration">Expected duration</label><select id="project-duration" name="duration"><option>Not specified</option><option>Under 1 month</option><option>1–3 months</option><option>3–6 months</option><option>6+ months</option></select></div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="button button-secondary" id="cancel-publish">Cancel</button>
+              <button type="submit" class="button button-primary">Publish project <span>→</span></button>
+            </div>
+            <p class="demo-notice">Read-only integration: projects load from your spreadsheet. Publishing will be enabled after we configure an authorized write destination.</p>
+          </form>
+
+          <aside class="form-aside">
+            <div class="aside-illustration">✦</div>
+            <h3>Make the opportunity clear.</h3>
+            <p>Strong project listings help employees understand the goal, the skills they can contribute, and the experience they can gain.</p>
+            <ul><li>Describe the outcome, not just the tasks.</li><li>List essential skills and nice-to-have skills clearly.</li><li>Set realistic expectations for location and duration.</li></ul>
+            <div class="privacy-note"><strong>Before launch</strong><p>We'll add sign-in and manager permissions before connecting this form to real company data.</p></div>
+          </aside>
+        </div>
+      </section>
+
+      <footer class="footer"><span>ProjectHub <span class="footer-dot">·</span> Frontend prototype</span><span>Built for internal project discovery</span></footer>
+    </main>
+  </div>
+
+  <dialog id="project-dialog" class="project-dialog">
+    <button class="dialog-close" id="close-dialog" aria-label="Close project details" type="button">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
