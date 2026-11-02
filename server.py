@@ -43,12 +43,12 @@ from fastmcp import FastMCP
 # column headers in your spreadsheet (values). Edit the values to match your
 # sheet; header matching is case- and whitespace-insensitive.
 COLUMNS: dict[str, str] = {
-    "role_id": "Role ID",
-    "title": "Job Title",
-    "skills": "Required Skills",
-    "status": "Status",
-    "description": "Description",
-    "location": "Location",
+    "role_id": "role_id",
+    "title": "title",
+    "skills": "required_skills",
+    "status": "status",
+    "description": "client_project",
+    "location": "location",
 }
 
 # Status values (lower-cased) that count as "open".
