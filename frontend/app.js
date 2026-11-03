@@ -1,5 +1,5 @@
 /* ProjectHub frontend connected to the Python API. */
-const API_BASE = "http://127.0.0.1:8001/api";
+const API_BASE = "https://net-worker-rwvj.onrender.com/api";
 const popularSkillLimit = 5;
 let projects = [];
 let activeSkill = "";
