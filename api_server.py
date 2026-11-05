@@ -19,7 +19,7 @@ app = FastAPI(title="ProjectHub API", version="1.0.0")
 # production deployment; restrict this to your trusted Teams/app origins then.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://127.0.0.1:5500","https://net-worker-rwvj.onrender.com"],
     allow_credentials=False,
     allow_methods=["GET", "OPTIONS"],
     allow_headers=["*"],
